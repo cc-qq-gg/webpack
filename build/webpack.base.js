@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const rootDir = process.cwd()
 module.exports = {
   entry: path.resolve(rootDir, 'src/index.js'),
@@ -23,6 +24,7 @@ module.exports = {
       inject: 'body',
       scriptLoading: 'blocking',
     }),
+    new CleanWebpackPlugin(),
   ]
 
 }
