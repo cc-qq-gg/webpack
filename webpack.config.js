@@ -6,10 +6,15 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash:8].js',
   },
+  mode: 'development',
+  // 定位源码
+  devtool: "source-map",
   devServer: {
+    // contentBase was renamed to static
+    // contentBase: path.resolve(__dirname, './dist'),
+    // static: path.resolve(__dirname, './dist'),
     port: '3001', // 默认是 8080
     hot: true,
-    stats: 'errors-only', // 终端仅打印 error
     compress: true, // 是否启用 gzip 压缩
     proxy: {
       '/api': {
