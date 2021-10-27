@@ -16,6 +16,11 @@ module.exports = {
         include: path.resolve(rootDir, 'src'),
         exclude: /node_modules/,
       },
+      {
+        test: /\.(le|c)ss$/,
+        exclude: /node_modules/,
+        use: [ 'style-loader','css-loader', 'less-loader']
+      },
     ]
   },
   plugins: [

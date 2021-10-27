@@ -1,7 +1,17 @@
+import './index.less'
+import './importOnly'
 class Test {
   constructor() {
-    document.write('hello world 8888')
-    console.log(object);
+    this.renderDiv()
+  }
+
+  renderDiv() {
+    setTimeout(() =>{
+      const div = document.createElement('div')
+      div.className = 'test'
+      div.innerHTML = 'hello world'
+      document.body.append(div)
+    })
   }
 }
 
